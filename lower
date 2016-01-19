@@ -1,0 +1,9 @@
+#!/bin/bash
+# lower tmux session name number with one
+
+sessionName="$(tmux display-message -p '#S')"
+sessionNo="$(echo $sessionName | sed 's/^.*(\(.*\))/\1/')"
+
+newSessionNo=$(expr $sessionNo - 1)
+tmux rename-session -t $sessionName $(echo $sessionName | sed "s/\(^.*\)(.*)/\1($newSessionNo)/")
+

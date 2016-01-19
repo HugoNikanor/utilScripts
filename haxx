@@ -1,0 +1,13 @@
+#!/bin/bash
+clear;
+time=60
+width=$(tput cols)
+for x in $(seq $(( width - 1 ))); do
+	echo -n " "
+done
+echo -en "]\r["
+for x in $(seq $((width - 2))); do
+	echo -n "#"
+	sleep 1
+done
+echo -e "\n$(tput bold)YOU HAVE BEEN HACKED!$(tput sgr0)"
