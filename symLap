@@ -1,0 +1,5 @@
+#!/bin/bash
+# creates symlinks from here to ~/bin/*
+for x in $(ls ./laptop); do
+	ln -s "$(dirname $(realpath $0))/laptop/$x" "$HOME/bin/$x"
+done

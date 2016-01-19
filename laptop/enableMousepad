@@ -1,0 +1,2 @@
+#!/bin/bash
+xinput set-prop "$(xinput list | grep SynPS | sed -n 's/^.*id=\([0-9]*\).*/\1/p')" "Device Enabled" 1
